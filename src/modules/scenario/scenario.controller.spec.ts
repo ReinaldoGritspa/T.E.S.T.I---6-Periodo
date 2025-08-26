@@ -1,3 +1,5 @@
+/* eslint-disable prettier/prettier */
+
 import { Test, TestingModule } from '@nestjs/testing';
 import { ScenarioController } from './scenario.controller';
 import { ScenarioService } from './scenario.service';
