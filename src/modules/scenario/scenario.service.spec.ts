@@ -10,7 +10,6 @@ describe('ScenarioService', () => {
     const module: TestingModule = await Test.createTestingModule({
       providers: [ScenarioService],
     }).compile();
-
     service = module.get<ScenarioService>(ScenarioService);
   });
 

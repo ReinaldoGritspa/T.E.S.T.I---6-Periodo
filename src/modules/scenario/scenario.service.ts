@@ -5,6 +5,7 @@ import { Injectable } from '@nestjs/common';
 import { CreateScenarioDto } from './dto/create-scenario.dto';
 import { UpdateScenarioDto } from './dto/update-scenario.dto';  
 import { CreateScenarioUseCase } from './use-cases/create-scenario.use-case';
+import { ListScenarioUseCase } from './use-cases/listall-scenario.use-case';
 
 @Injectable()
 export class ScenarioService {
@@ -15,7 +16,7 @@ export class ScenarioService {
   }
 
   findAll() {
-    return `This action returns all scenario`;
+    return this.ListScenarioUseCase.list();
   }
 
   findOne(id: number) {
