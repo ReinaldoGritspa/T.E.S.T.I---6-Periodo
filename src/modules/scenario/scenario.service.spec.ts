@@ -1,5 +1,3 @@
-/* eslint-disable prettier/prettier */
-
 import { Test, TestingModule } from '@nestjs/testing';
 import { ScenarioService } from './scenario.service';
 
@@ -10,6 +8,7 @@ describe('ScenarioService', () => {
     const module: TestingModule = await Test.createTestingModule({
       providers: [ScenarioService],
     }).compile();
+
     service = module.get<ScenarioService>(ScenarioService);
   });
 

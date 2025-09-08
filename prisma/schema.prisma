@@ -1,8 +1,4 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
 
-// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
-// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
 
 generator client {
   provider = "prisma-client-js"
@@ -16,30 +12,30 @@ datasource db {
 model Scenario {
   id String @id @default(uuid())
   title String
-  descripition String?
+  description String?
   createdAt DateTime @default(now())
   options Option[]
 }
-  
+
 model Option {
   id String @id @default(uuid())
   name String
   description String?
   scenarioId String
   scenario Scenario @relation(fields: [scenarioId], references: [id])
-  scores score[]
+  scores Score[]
 }
 
 model Criterion {
   id String @id @default(uuid())
   name String
-  weight Float // 0 ... 1 (a soma dos pesos)
+  weight Float //0...1 (soma dos pesos)
   active Boolean @default(true)
   createdAt DateTime @default(now())
-  score score[]
+  scores Score[]
 }
 
-model score {
+model Score {
   id String @id @default(uuid())
   optionId String
   option Option @relation(fields: [optionId], references: [id])
